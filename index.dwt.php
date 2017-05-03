@@ -17,9 +17,7 @@
                 </div>
                 <div class="ecjia-fr">
                     <ul class="nav hover-font">
-                        <li><a class="nopjax" href="{$main_url}">首页</a></li>
-                        <li {if $active eq 'category'}class="active"{/if}><a class="nopjax" href="{$main_goods_url}">商家</a></li>
-						<li class="active"><a href="javascript:;">下载APP</a></li>
+                        <li class="active"><a class="nopjax" href="{$main_url}">首页</a></li>
 						<li><a class="nopjax" href="{$merchant_url}" target="_blank">商家入驻</a></li>
 						<li><a class="nopjax ecjia-back-green" href="{$merchant_login}" target="_blank">商家登录</a></li>
                     </ul>
