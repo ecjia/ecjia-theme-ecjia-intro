@@ -100,6 +100,13 @@ RC_Hook::add_action('main/index/init', function () {
             $screenshots[$key]['img_url'] = !empty($val['img_url'])? RC_Upload::upload_url($val['img_url']) : '';
             if (empty($val['img_url'])) unset($screenshots[$key]);
         }
+
+        $data = array(
+            'powered' => 'Powered&nbsp;by&nbsp;<a href="https:\/\/ecjia.com" target="_blank">ECJia</a>',
+        );
+
+        $data = RC_Hook::apply_filters('ecjia_general_info_filter', $data);
+
          
         ecjia_front::$controller->assign_title();
     
@@ -128,7 +135,7 @@ RC_Hook::add_action('main/index/init', function () {
         ecjia_front::$controller->assign('touch_qrcode', 	        $mobile_touch_qrcode);
         ecjia_front::$controller->assign('shop_logo', 				$shop_logo);
         ecjia_front::$controller->assign('shop_wechat_qrcode', 	$shop_wechat_qrcode);
-        ecjia_front::$controller->assign('powered', 	'Powered&nbsp;by&nbsp;<a href="https:\/\/ecjia.com" target="_blank">ECJia</a>');
+        ecjia_front::$controller->assign('commoninfo', 	        $data);
     }
     
     ecjia_front::$controller->display('index.dwt', $cache_id);
