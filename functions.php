@@ -140,7 +140,7 @@ RC_Hook::add_action('main/index/init', function () {
         ecjia_front::$controller->assign('shop_wechat_qrcode', 	$shop_wechat_qrcode);
         ecjia_front::$controller->assign('commoninfo', 	        $data);
     }
-    
-    ecjia_front::$controller->display('index.dwt', $cache_id);
+
+    return ecjia_front::$controller->display('index.dwt', $cache_id);
     
 });//首页
